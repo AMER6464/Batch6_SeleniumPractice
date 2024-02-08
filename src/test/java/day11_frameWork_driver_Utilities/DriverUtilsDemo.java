@@ -1,0 +1,36 @@
+
+package day11_frameWork_driver_Utilities;
+
+import org.openqa.selenium.By;
+
+import Utils.DataReader;
+
+import Utils.Driver;
+
+
+
+public class DriverUtilsDemo {
+
+
+
+	public static void main(String[] args) {
+		sauceDemoTest();
+	}
+	
+	
+	public static void sauceDemoTest() {
+		
+		// go to saucedemo website 
+		Driver.getDriver().get("https://www.saucedemo.com");
+		
+		Driver.getDriver().findElement(By.id("user-name")).sendKeys(DataReader.getProperty("sauce_username"));
+		
+		Driver.getDriver().findElement(By.id("password")).sendKeys(DataReader.getProperty("sauce_password"));
+		
+		Driver.getDriver().findElement(By.id("login-button")).click();
+		
+		
+		
+	}
+
+}
